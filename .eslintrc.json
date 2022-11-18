@@ -96,7 +96,8 @@
     "@typescript-eslint/no-misused-promises": ["error", { "checksVoidReturn": { "attributes": false } }],
 
     // アラートを許可する
-    "no-alert": 0
+    "no-alert": 0,
+    "camelcase": "off" // キャメルケース
   },
   "settings": {
     "import/resolver": {

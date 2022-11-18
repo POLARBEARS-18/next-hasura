@@ -12,7 +12,7 @@ export const GET_USERS = gql`
 
 export const GET_USERS_LOCAL = gql`
   query GetUsers {
-    users(order_by: { created_at: desc }) @apollo {
+    users(order_by: { created_at: desc }) @client {
       id
       name
       created_at
@@ -60,7 +60,7 @@ export const DELETE_USER = gql`
 
 export const UPDATE_USER = gql`
   mutation UpdateUser($id: uuid!, $name: String!) {
-    update_users_by_pk(pk_columns: { id: "" }, _set: { name: "" }) {
+    update_users_by_pk(pk_columns: { id: $id }, _set: { name: $name }) {
       id
       name
       created_at
